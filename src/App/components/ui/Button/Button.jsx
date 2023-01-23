@@ -1,4 +1,5 @@
 import React from 'react'
+import './Button.css';
 
 /**
  * un bouton!!!
@@ -11,16 +12,7 @@ const Button=(props)=>{
              //accolade pour mettre du javascript la on passe par la props text
             props.text
         }
-        {
-            //...et là enfant
-            props.children
-        }  
     </button>;
 }
-
-/*
-function Button(){
- return <button className='Button'>tom</button>
-}*/
 
 export default Button;
