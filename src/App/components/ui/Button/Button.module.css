@@ -1,0 +1,16 @@
+
+.Button {
+    height:30px;
+    width:30px;
+    padding: 0;
+    border:none;
+    background-color: rgb(255, 255, 255);
+}
+
+.Button img{
+    height:30px;
+    width:30px;
+     display: inline;
+}
+
+.Button *{vertical-align: middle;}
