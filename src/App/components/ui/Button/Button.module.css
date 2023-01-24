@@ -6,8 +6,24 @@
     padding:0px;
     background-color: rgb(255, 255, 255);
     background-image: url("http://localhost:3000/img/close.png");
+    box-shadow: 5px 5px 10px rgb(141, 68, 68);
+    box-sizing: border-box;
 
 }
+
+.Button.clicked{
+    box-shadow: 5px 5px 10px rgb(93, 155, 180);
+}
+
+.Button:hover{
+    box-shadow: 5px 5px 10px rgb(84, 163, 97);
+}
+
+.Button:active {
+    transform: translateY(4px);
+    box-shadow: 5px 5px 10px rgb(155, 163, 84);
+}
+
 
 .Button img{
     height:30px;
