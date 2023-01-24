@@ -24,6 +24,7 @@ class App extends React.PureComponent {
         Nombre de click : {this.state.counter}
         <hr />
         <Button
+          backgroundColor="blue"
           onButtonClick={() => {
             this.setState({ counter: this.state.counter - 1 });
             console.log(
@@ -31,10 +32,8 @@ class App extends React.PureComponent {
               this.state.counter
             );
           }}
-        >
-          Click-1
-        </Button>
-        <Button>Click+1</Button>
+        > Hello</Button>
+        <Button> Bye</Button>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./Button.module.css";
+import PropTypes from "prop-types";
 
 /**
  * un bouton !!!
@@ -12,14 +13,15 @@ const Button = (props) => {
   useEffect(() => {
     //si on met pas le if on va tourner en boucle !
     if (isClicked) {
-      setTimeout(() => {setIsClicked(false);
-    }, 750);
-
+      setTimeout(() => {
+        setIsClicked(false);
+      }, 750);
     }
   }, [isClicked]);
   console.log(props);
   return (
     <button
+      style={{...props.style,backgroundColor:props.backgroundColor}}
       className={
         //isClicked?style.Button+' '+style.clicked:style.Button
         `${style.Button}${isClicked ? " " + style.clicked : ""}`
@@ -33,6 +35,17 @@ const Button = (props) => {
       {props.children}
     </button>
   );
+};
+
+Button.propTypes = {
+  backgroundColor:PropTypes.string,
+  onButtonClick: PropTypes.func.isRequired,
+  children: PropTypes.any.isRequired,
+};
+
+Button.defaultProps = {
+  onButtonClick: () => {
+  },
 };
 
 export default Button;
