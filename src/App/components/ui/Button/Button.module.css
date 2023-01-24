@@ -1,15 +1,18 @@
 
 .Button {
     height:30px;
-    width:30px;
-    padding: 0;
-    border:none;
+    width:60px;
+    margin: 2px;
+    padding:0px;
     background-color: rgb(255, 255, 255);
+    background-image: url("http://localhost:3000/img/close.png");
+
 }
 
 .Button img{
     height:30px;
     width:30px;
+   /** background-image: url("/img/close.png");**/
      display: inline;
 }
 
