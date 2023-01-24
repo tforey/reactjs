@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-Types";
+import PropTypes from "prop-types";
 import style from "./MemeSvgViewer.module.css";
 interface IMemeSvgViewerProps {
     style?:{}
