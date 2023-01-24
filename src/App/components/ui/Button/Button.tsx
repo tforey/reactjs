@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import style from "./Button.module.css";
 import PropTypes from "prop-types";
+interface IButtonProps {
+  onButtonClick?: Function;
+  backgroundColor?: string; //"?"" pour indiquer pas obligatoire
+  style: {}; //primitive d'un objet
+  children: string | ReactElement | Array<ReactElement | string>;
+  type?: "submit" | "reset" | "button";
+}
 
 /**
  * un bouton !!!
  * extension nav "React Developper Tools" pour voir les états des état sur le navigateur
  * @returns react component structure
  */
-const Button = (props) => {
+const Button: React.FC<IButtonProps> = (props) => {
   const [isClicked, setIsClicked] = useState(false); //état initial de l'état de l'objet
   //hook d'effet de cycle de vie d'une valeur ou de composant
   useEffect(() => {
@@ -21,15 +28,18 @@ const Button = (props) => {
   console.log(props);
   return (
     <button
-      style={{...props.style,backgroundColor:props.backgroundColor}}
+      style={{ ...props.style, backgroundColor: props.backgroundColor }}
       className={
         //isClicked?style.Button+' '+style.clicked:style.Button
         `${style.Button}${isClicked ? " " + style.clicked : ""}`
       }
+      type={props.type}
       onClick={(arg) => {
         setIsClicked(true);
         console.log(arg);
-        props.onButtonClick();
+        if (undefined !== props.onButtonClick) {
+          props.onButtonClick();
+        }
       }}
     >
       {props.children}
@@ -38,14 +48,15 @@ const Button = (props) => {
 };
 
 Button.propTypes = {
-  backgroundColor:PropTypes.string,
+  backgroundColor: PropTypes.string,
   onButtonClick: PropTypes.func.isRequired,
   children: PropTypes.any.isRequired,
+  type: PropTypes.oneOf(["submit", "reset", "button"]),
 };
 
 Button.defaultProps = {
-  onButtonClick: () => {
-  },
+  onButtonClick: () => {},
+  type: "button",
 };
 
 export default Button;

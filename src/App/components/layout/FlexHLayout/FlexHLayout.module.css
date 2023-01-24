@@ -1,0 +1,9 @@
+.FlexHLayout {
+    display: flex;
+}
+.FlexHLayout>*:first-child{
+    flex: grow 1;
+}
+.FlexHLayout>*:last-child{
+    padding: 0 15px;
+}
