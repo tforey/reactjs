@@ -1,0 +1,40 @@
+{
+    "images": [
+        {
+            "id": 0,
+            "url": "1.jfif",
+            "w": 474,
+            "h": 315,
+            "name": "paysage"
+        },
+        {
+            "id": 1,
+            "url": "2.jfif",
+            "w": 296,
+            "h": 180,
+            "name": "screen"
+        },
+        {
+            "id": 2,
+            "url": "3.jfif",
+            "w": 147,
+            "h": 180,
+            "name": "kitty"
+        }
+    ],
+    "memes": [
+        {
+            "id": 0,
+            "titre": "Mon 1er meme",
+            "text": "React m'a tué",
+            "x": 50,
+            "y": 70,
+            "fontWeight": "500",
+            "fontSize": 30,
+            "underline": true,
+            "italic": false,
+            "imageId": 0,
+            "color": "#EF3DE5"
+        }
+    ]
+}
