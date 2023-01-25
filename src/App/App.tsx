@@ -6,6 +6,9 @@ import MemeForm from "./components/feature/MemeForm/MemeForm";
 import FlexHLayout from "./components/layout/FlexHLayout/FlexHLayout";
 import Footer from "./components/ui/Footer/Footer";
 import Header from "./components/ui/Header/Header";
+import Button from "./components/ui/Button/Button";
+//import Store from "./components/store/";
+
 interface IAppState {
   meme: MemeInterface;
   images: Array<ImageInterface>;
@@ -22,7 +25,8 @@ class App extends React.PureComponent<IAppProps, IAppState> {
   }
 
   componentDidMount(): void {
-    fetch(`http://localocalhost:3000/images`)
+  //  console.log(uneValueToDelete);
+    fetch(`http://localhost:3000/images`)
       .then(r=>r.json(),r=>[])
       .then(ar=>this.setState({images:ar}));
   }
@@ -30,6 +34,7 @@ class App extends React.PureComponent<IAppProps, IAppState> {
   render() {
     return (
       <div className="App">
+        <Button >To load</Button>
         <Header />
         <FlexHLayout style={{ height: "89vh" }}>
           <MemeSVGViewer basePath="/img/meme/" image={this.state.images.find(elt =>elt.id===this.state.meme.imageId)} meme={this.state.meme} />

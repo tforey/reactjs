@@ -1,5 +1,5 @@
 import { MemeInterface, ImageInterface } from "orsys-tjs-meme";
-import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import Button from "../../ui/Button/Button";
 import style from "./MemeForm.module.css";
 
@@ -175,5 +175,10 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
     </div>
   );
 };
-
-export default MemeForm;
+function mapDispatchToprops(dispatch:Function){
+  return {}
+}
+function mapStateToProps(state:any,ownprops:any){
+  return {...ownprops,images:state.listes.images}
+}
+export default connect(mapStateToProps,mapDispatchToprops)(MemeForm);
