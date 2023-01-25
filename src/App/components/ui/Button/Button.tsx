@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 interface IButtonProps {
   onButtonClick?: Function;
   backgroundColor?: string; //"?"" pour indiquer pas obligatoire
-  style: {}; //primitive d'un objet
+  style?: {}; //primitive d'un objet
   children: string | ReactElement | Array<ReactElement | string>;
   type?: "submit" | "reset" | "button";
 }
