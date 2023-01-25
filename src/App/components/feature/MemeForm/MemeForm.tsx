@@ -175,10 +175,14 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
     </div>
   );
 };
-function mapDispatchToprops(dispatch:Function){
-  return {}
+function mapDispatchToprops(dispatch: Function) {
+  return {
+    onMemeValueChange: (newmeme: MemeInterface) => {
+      dispatch(updateCurrent(newMeme));
+    },
+  };
 }
-function mapStateToProps(state:any,ownprops:any){
-  return {...ownprops,images:state.listes.images}
+function mapStateToProps(state: any, ownprops: any) {
+  return { ...ownprops, images: state.listes.images };
 }
-export default connect(mapStateToProps,mapDispatchToprops)(MemeForm);
+export default connect(mapStateToProps, mapDispatchToprops)(MemeForm);

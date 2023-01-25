@@ -1,17 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit/"
 import { combineReducers } from "redux"
-import listeReducer, { addImages } from "./listes";
+import listeReducer from "./listes";
+import currentReducer from "./current";
 export const uneValueToDelete="";
 
 export const store=configureStore({
-    reducer: combineReducers({listes:listeReducer}),
+    reducer: combineReducers({listes:listeReducer,current:currentReducer}),
     devTools:true
 });
 
 store.subscribe(()=>{
 
 })
-
-console.log(store.getState());
-
-const tmpAction = addImages({h:1000,w:50,url:'test.jpg',id:132,name:"test"})
